@@ -174,14 +174,6 @@ def generate_client_email_text(client_df, client_name, release, delivery_product
                 min_date = min(valid_dates)
                 max_date = max(valid_dates)
 
-            # else:
-            #     # If no valid dates, add the "No date information found" message
-            #     date_coverage = [
-            #         "No date information found for product"
-            #     ]
-
-            # Join the coverage information into a single string
-            #date_coverage_text = "<br>".join(date_coverage)
             # Convert the product counts DataFrame to an HTML table and add it to the email text
             updated_product = product.replace('-', ' ').replace('Claims', '')
             product_html = convert_table_to_html(product_df)
