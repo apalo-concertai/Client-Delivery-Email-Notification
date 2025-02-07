@@ -32,7 +32,7 @@ product_paths_file=con.dd_attachemnt_path_file
 # List of Multiple Recipients
 # receiver_emails = con.receiver_emails
 cc_emails = con.cc_emails
-file_path = 'C:\\Users\\AbhijeetPalo\\PycharmProjects\\pythonProject\\venv\\DeliveryCount-Email-Generator\\email_templates\\receiver_list.txt'
+#file_path = 'C:\\Users\\AbhijeetPalo\\PycharmProjects\\pythonProject\\venv\\DeliveryCount-Email-Generator\\email_templates\\receiver_list.txt'
 
 
 # Function to convert DataFrame to HTML table (unchanged)
