@@ -1,0 +1,9 @@
+
+<p>Kindly acknowledge receipt and please let us know if you have any questions or submit
+your question <a href="https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fprotect-us.mimecast.com%2Fs%2Fp2bbCR6DGAFvJ7q8cPeanf%3Fdomain%3Dnam04.safelinks.protection.outlook.com&data=05%7C01%7Ctlifke%40concertai.com%7C16615afc9eac4c0985d708dabce4d61f%7C61a32d1a5fde47799b503fc4a615ddc4%7C1%7C0%7C638029988287537199%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=baNF6tB3WhXhCPHsNOdJw5cITo5%2BLoufwz9EPkGztKA%3D&reserved=0">here.</a> </p>
+
+
+<p>Sincerely,</p>
+
+<p>{{cs_lead_name}}</p>
+<p>ConcertAI, DataOps</p>

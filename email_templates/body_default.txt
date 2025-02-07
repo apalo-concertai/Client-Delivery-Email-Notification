@@ -1,0 +1,13 @@
+
+Hi {{client_name}} team,
+
+<p>
+Please see below for details on the {{release}} data delivery, which includes
+refreshes for the following products: {{delivery_products_list}}. </p>
+
+<p> Delivery Method: {{delivery_method}} </p>
+<p> Location: {{location}} </p>
+<p> Password: {{password}} </p>
+<p> Documentation [Data Product Manuals, Dictionaries, Release Notes, Model Outputs, etc.] </p>
+<p> Additional Info: [DELETE IF NOT RELEVANT] </p>
+<p> Delivery Counts: Attached and Embedded </p>
