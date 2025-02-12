@@ -15,7 +15,7 @@ client_delivery_details='client-delivery-details.csv'
 min_max_counts='master_dates_data_delivery_202501.csv'
 iteration= 1
 
-dd_attachemnt_path_file = 'C:\Users\AbhijeetPalo\OneDrive - ConcertAI\Client-Delivery-Email-Notification\email_templates\dd_attachemnts.txt'
+#dd_attachemnt_path_file = 'C:\Users\AbhijeetPalo\OneDrive - ConcertAI\Client-Delivery-Email-Notification\email_templates\dd_attachemnts.txt'
 
 #add for Amgen --"C:/Users/AbhijeetPalo/OneDrive - ConcertAI/SAI/ClientDeliveryCount/EmailAttachment/202412_ConcertAI Genome360 Data Dictionary.xlsx",
 

@@ -2,7 +2,8 @@ import re
 import sys
 # Function to parse the text file and extract email ids based on client names
 
-file_path = 'C:\\Users\\AbhijeetPalo\\PycharmProjects\\pythonProject\\venv\\DeliveryCount-Email-Generator\\email_templates\\receiver_list.txt'
+#file_path = 'C:\\Users\\AbhijeetPalo\\PycharmProjects\\pythonProject\\venv\\DeliveryCount-Email-Generator\\email_templates\\receiver_list.txt'
+file_path ='C:\Users\AbhijeetPalo\OneDrive - ConcertAI\Client-Delivery-Email-Notification\email_templates\signature_default.txt'
 def get_emails_from_file(file_path):
     client_emails = {}
 
