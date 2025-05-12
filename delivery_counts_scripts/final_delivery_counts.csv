@@ -1,0 +1,11 @@
+iteration,customer,delivery_type,product,format,addon,indication,subscription_category,subscription_subcategory,patient_count
+1,BMS,Patient360-Claims,Patient360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Non-Small Cell Lung Cancer (NSCLC),Standard Subscription,Standard,70622
+1,BMS,Patient360-Claims,Patient360,Open Claims - Common Data Model (CDM),Model Outputs: Standard (Regimen-based) Line of Therapy,Non-Small Cell Lung Cancer (NSCLC),Standard Subscription,Standard,27798
+1,BMS,Patient360-Claims,Patient360,Open Claims - Common Data Model (CDM),Model Outputs: Standard (Progression-based) Line of Therapy,Breast Cancer,Standard Subscription,Standard,14851
+1,BMS,Patient360-Claims,Patient360,Open Claims - Common Data Model (CDM),Model Outputs: Standard (Progression-based) Line of Therapy,Non-Small Cell Lung Cancer (NSCLC),Standard Subscription,Standard,27798
+1,BMS,Patient360-Claims,Patient360,Open Claims - Common Data Model (CDM),Model Outputs: Adjuvant & Neo-Adjuvant Treatment Model,Breast Cancer,Standard Subscription,Standard,48686
+1,BMS,Patient360-Claims,Patient360,Open Claims - Common Data Model (CDM),Model Outputs: Standard (Regimen-based) Line of Therapy,Breast Cancer,Standard Subscription,Standard,14851
+1,BMS,Patient360-Claims,Patient360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Breast Cancer,Standard Subscription,Standard,61464
+1,BMS,Patient360-Claims,Patient360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Non-Small Cell Lung Cancer (NSCLC),Standard Subscription,Standard,60672
+1,BMS,Patient360-Claims,Patient360,Open Claims - Common Data Model (CDM),Model Outputs: Adjuvant & Neo-Adjuvant Treatment Model,Non-Small Cell Lung Cancer (NSCLC),Standard Subscription,Standard,8614
+1,BMS,Patient360-Claims,Patient360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Breast Cancer,Standard Subscription,Standard,71057

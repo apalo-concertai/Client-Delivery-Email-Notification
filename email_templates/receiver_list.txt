@@ -1,5 +1,12 @@
-Abbvie: apalo@concertai.com
+Abbvie: apalo@concertai.com,ssm@concertai.com
 BMS: ssm@concertai.com,apalo@concertai.com
-Verana: apalo@concertai.com
-MUSC: ssm@concertai.com,apalo@concertai.com
-UIC: ssm@concertai.com,apalo@concertai.com
+Amgen: apalo@concertai.com,ssm@concertai.com
+JJIM: ssm@concertai.com,apalo@concertai.com
+Asclepius Analytics:ssm@concertai.com,apalo@concertai.com
+ERACE EMORY:ssm@concertai.com,apalo@concertai.com
+DSI:apalo@concertai.com,ssm@concertai.com
+TAIHO:apalo@concertai.com,ssm@concertai.com
+NOVARTIS:apalo@concertai.com,ssm@concertai.com
+ONCARE:apalo@concertai.com,ssm@concertai.com
+BAYER:apalo@concertai.com,ssm@concertai.com
+REGENERON:apalo@concertai.com,ssm@concertai.com

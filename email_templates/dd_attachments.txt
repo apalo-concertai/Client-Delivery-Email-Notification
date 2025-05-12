@@ -1,0 +1,5 @@
+RWD360_DD =C:/Users/AbhijeetPalo/OneDrive - ConcertAI/SAI/ClientDeliveryCount/EmailAttachment/202503_ConcertAI RWD360 Data Dictionary_FINAL.xlsx
+Patient360_DD=C:/Users/AbhijeetPalo/OneDrive - ConcertAI/SAI/ClientDeliveryCount/EmailAttachment/202503_ConcertAI Patient360 Data Dictionary_FINAL.xlsx
+Genome360_DD=C:/Users/AbhijeetPalo/OneDrive - ConcertAI/SAI/ClientDeliveryCount/EmailAttachment/202412_ConcertAI Genome360 Data Dictionary.xlsx
+Claims_DD =C:/Users/AbhijeetPalo/OneDrive - ConcertAI/SAI/ClientDeliveryCount/EmailAttachment/202503_ConcertAI_Claims_CDM_Data_Dictionary_FINAL.xlsx
+Patient360 Analytical Layer_DD =C:/Users/AbhijeetPalo/OneDrive - ConcertAI/SAI/ClientDeliveryCount/EmailAttachment/Patient360 Analytical Layer Data Dictionary 202412 1.15.25.xlsx

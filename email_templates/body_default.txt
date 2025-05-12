@@ -1,4 +1,3 @@
-
 Hi {{client_name}} team,
 
 <p>
