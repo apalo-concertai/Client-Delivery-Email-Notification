@@ -1,0 +1,14 @@
+iteration,client,deliverymethod,s3location,password,cs_lead_name,cs_lead_email
+1,Abbvie,Parquet,https://c3-700-prod-dataextract.s3.dualstack.us-east-1.amazonaws.com/concerto_to_abbvie/202506/,,Srinivasan Munnisamappa,
+1,Amgen,Parquet,https://c3-1300-prod-ingress-egress.s3.dualstack.us-east-1.amazonaws.com/concert_to_amgen/202506/,,Srinivasan Munnisamappa,
+1,ASCLEPIUS ANALYTICS,CSV,https://asclepiusjt.egnyte.com/app/index.do#storage/files/1/Shared/NOVARTIS/NOVARTIS%2019%20Radioligand%20therapy/2.%20Data/ConcertAI/2025/3.%20Raw%20data/202506,Cd567tecD,Srinivasan Munnisamappa,
+1,JJIM,Parquet,"PT360 - https://c3-2300-prod-ingress-egress.s3.dualstack.us-east-1.amazonaws.com/concerto_to_jnj_vs-336/Patient360/202506/   
+RWD360 - https://c3-2300-prod-ingress-egress.s3.dualstack.us-east-1.amazonaws.com/concerto_to_jnj_vs-273/RWD/202506/",,Srinivasan Munnisamappa,
+1,BMS,Parquet,https://b4-ingress-egress-bucket-01.s3.us-east-1.amazonaws.com/BMS_202506/,,Srinivasan Munnisamappa,
+1,ERACE EMORY,Parquet,D:\ERACE-DataSets\20250627 on VM 10.164.2.103,,Srinivasan Munnisamappa,
+1,DSI,Parquet,https://ds-idap-external.s3.ap-northeast-1.amazonaws.com/ExchangeArea/ConcertAI/20250627/,,Srinivasan Munnisamappa,
+1,NOVARTIS,Parquet,https://novartisrs3aprdieconcertai01.s3.eu-west-1.amazonaws.com/ToFoundry/20250627/,,Srinivasan Munnisamappa,
+1,TAIHO,Parquet,https://concertai.filecloudonline.com/url/dedqj6bvjeyz2ymt,"U,*OskZD3g1+",Srinivasan Munnisamappa,
+1,BAYER,Parquet,https://concertai.filecloudonline.com/url/d6abcsnubguqgj2i,"Cjz#&X4n1=,&",Srinivasan Munnisamappa,
+1,REGENERON,Parquet,https://c3-2400-prod-ingress-egress.s3.dualstack.us-east-1.amazonaws.com/concerto_to_regeneron/202507/,,Srinivasan Munnisamappa,
+1,MERCK,Parquet,https://concertai.filecloudonline.com/url/ntyrykr6vnxppnbz,+mRQn>r4q<[8,Srinivasan Munnisamappa,

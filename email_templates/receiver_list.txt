@@ -1,8 +1,8 @@
 Abbvie: apalo@concertai.com,ssm@concertai.com
-BMS: ssm@concertai.com,apalo@concertai.com
+BMS: apalo@concertai.com,ssm@concertai.com
 Amgen: apalo@concertai.com,ssm@concertai.com
 JJIM: ssm@concertai.com,apalo@concertai.com
-Asclepius Analytics:ssm@concertai.com,apalo@concertai.com
+ASCLEPIUS ANALYTICS:ssm@concertai.com,apalo@concertai.com
 ERACE EMORY:ssm@concertai.com,apalo@concertai.com
 DSI:apalo@concertai.com,ssm@concertai.com
 TAIHO:apalo@concertai.com,ssm@concertai.com
@@ -10,3 +10,5 @@ NOVARTIS:apalo@concertai.com,ssm@concertai.com
 ONCARE:apalo@concertai.com,ssm@concertai.com
 BAYER:apalo@concertai.com,ssm@concertai.com
 REGENERON:apalo@concertai.com,ssm@concertai.com
+ANALYSIS GROUP:apalo@concertai.com,ssm@concertai.com
+MERCK:apalo@concertai.com,ssm@concertai.com

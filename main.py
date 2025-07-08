@@ -1,4 +1,4 @@
-from utils import Config,redshift_conn,create_schema_list,format_sql_script,combine_sql_query,get_emails_by_client
+from utils import Config,redshift_conn,create_schema_list,format_sql_script,combine_sql_query,get_emails_by_client,format_rwd360_claims_script,apply_row_filter,format_patient_count
 import pandas as pd
 import os, sys
 import re
@@ -42,6 +42,13 @@ db_pass=config.db_password
 db_host=config.db_host
 db_port=config.db_port
 db_name=config.db_name
+
+# RWD360 + Cliams SQL template
+
+rwd360_ehr_sql_template= config.rwd360_ehr_sql_template
+rwd360_ehr_claims_sql_template= config.rwd360_ehr_claims_sql_template
+rwd360_ehr_mo_sql_template = config.rwd360_ehr_mo_sql_template
+rwd360_ehr_label_sql_template=config.rwd360_ehr_label_sql_template
 
 #engine = create_engine(f'postgresql+psycopg2://{db_user}:{db_pass}@{db_host}:{db_port}/{db_name}')
 def convert_table_to_html(df, req_columns=['Product', 'Format', 'Addon', 'Indication', 'Subscription Category',
@@ -129,14 +136,16 @@ def get_client_delivery_details(filename,iteration,client_name):
         's3location'].empty else 'NOT APPLICABLE'
     file_password = filtered_client_details_df['password'].iloc[0] if not pd.isna(
         filtered_client_details_df['password'].iloc[0]) else 'NOT APPLICABLE'
-    return(cs_lead_email,delivery_method,s3_location,file_password,cs_lead_name)
+    print(f'FilePassword: {file_password}')
+    return(delivery_method,s3_location,file_password,cs_lead_name)
 
 def generate_client_email_text(client_df, client_name, release, delivery_products_list, delivery_type_list,
-                               cs_lead_name, cs_lead_email,
+                               cs_lead_name,
                                delivery_method, min_max_date_df, s3_location,file_password):
     '''Generates the HTML file for a client email.'''
-    # Same content as provided in the previous code,
+
     unique_products = set(val for item in delivery_type_list for val in item.split('-'))
+
     #unique_products = set(item for item in delivery_products_list )
     print('unique:',unique_products)
     try:
@@ -148,12 +157,29 @@ def generate_client_email_text(client_df, client_name, release, delivery_product
             'Genome360': 'Genome360™',
             'Claims':'OpenClaims+SDOH',
             'RWD360-Analytical Layer':'RWD360-Analytical Layer',
-            'PT360-Analytical Layer':'PT360-Analytical Layer'
+            'PT360-Analytical Layer':'Patient360-Analytical Layer'
         }
+        # Define explicit order:
+        product_order = {
+            'RWD360': 0,
+            'Patient360': 1,
+            'Genome360': 2,
+            'Claims': 3,
+            'RWD360-Analytical Layer': 4,
+            'PT360-Analytical Layer': 5
+        }
+        # Sort unique_products by the index in product_order:
+        unique_products_sorted = sorted(unique_products, key=lambda x: product_order.get(x, 999))
 
-        updated_delivery_products_list = [
-            trademark_map.get(product, product) for product in unique_products
-        ]
+        updated_delivery_products_list = [trademark_map.get(p, p) for p in unique_products_sorted]
+        # updated_delivery_products_list = [
+        #     trademark_map.get(product, product) for product in unique_products]
+
+        # updated_delivery_products_list = []
+        # for product in unique_products:
+        #     updated_delivery_products_list.append(trademark_map.get(product, product))
+
+
         print('updated_delivery_products_list:',updated_delivery_products_list)
         template = environment.get_template("body_default.txt")
         body = template.render(
@@ -161,10 +187,9 @@ def generate_client_email_text(client_df, client_name, release, delivery_product
             release=release,
             delivery_products_list=updated_delivery_products_list,
             cs_lead_name=cs_lead_name,
-            cs_lead_email=cs_lead_email,
             delivery_method=delivery_method,
             location=s3_location,
-            password=file_password
+            file_password=file_password
         )
     except TemplateNotFound as e:
         print(f"Template not found: {e}")
@@ -173,15 +198,23 @@ def generate_client_email_text(client_df, client_name, release, delivery_product
     email_text = body
     # Remove delivery type items with Claims
     #delivery_type_list = [item for item in delivery_type_list if 'Claims' not in item]
-    print("DeliveryTypeList{}".format(delivery_type_list))
-    #for product in delivery_products_list:
+    # delivery_type_list = [item for item in delivery_type_list
+    #                       if '-Claims' not in item] + [item + '-Claims' for item in delivery_type_list if 'Claims' not in item]
+
+    # Appended claims to not split the table count  in to NonCliams and CLaims
+    #claims_delivery_type_list = list(set([item + '-Claims' for item in delivery_type_list if 'Claims' not in item]))
+    #claims_delivery_type_list = list(set([item.replace('-Claims', '') for item in delivery_type_list]))
+
+    #delivery_unique_products = client_df.loc['product'].unique()
+    print("unique delivery_unique_products{}".format(delivery_type_list))
+    #for product in claims_delivery_type_list:
     for product in delivery_type_list:
         date_list = []
         #print(client_df.loc['Product'])
         product_df = client_df[client_df['delivery_type'].str.upper() == product.upper()]
         trim_prodcut=product.replace('-Claims', '')
-        trim_prodcut=product.split('-')[0]
-        print(product_df)
+        #trim_prodcut=product.split('-')[0]
+        print(trim_prodcut)
         print("generating max min dates")
         #product = re.sub(r'[^a-zA-Z0-9\s]', '', product)
         # Directly filter min_max_date_df based on the matching product and client_name
@@ -239,9 +272,11 @@ def generate_client_email_text(client_df, client_name, release, delivery_product
             #date_coverage_text = "<br>".join(date_coverage)
             # Convert the product counts DataFrame to an HTML table and add it to the email text
             updated_product = product.replace('-', ' ').replace('Claims', '')
+            updated_product = product.replace('-', ' ').replace('Claims', '')
             print(product_df)
             product_html = convert_table_to_html(product_df)
-            email_text += f'<h3>{updated_product} Counts:</h3><span>Date coverage:</span><br>{max_date}<br>{min_date}<br><br>{product_html}'
+            min_txt ='(not including 1901-01-01 date of birth values set as part of de-identification of patients over 80 years of age)'
+            email_text += f'<h3>{updated_product} Counts:</h3><span>Date coverage:</span><br>{max_date}{min_txt}<br>{min_date}<br><br>{product_html}'
 
     # Generate the signature
     template = environment.get_template("signature_default.txt")
@@ -249,7 +284,6 @@ def generate_client_email_text(client_df, client_name, release, delivery_product
         client_name=client_name,
         release=release,
         cs_lead_name=cs_lead_name,
-        cs_lead_email=cs_lead_email,
         client_product_min_max_dates=''
     )
 
@@ -259,9 +293,9 @@ def generate_client_email_text(client_df, client_name, release, delivery_product
     return email_text
 
 
-def send_email(smtp_server, port, sender_email, rcv_maillist, subject, user_name, password, df, client_name,
-               delivery_products_list, delivery_type_list, release, cs_lead_name, cs_lead_email, delivery_method,
-               min_max_date_df,s3_location,product_paths_file):
+def send_email(smtp_server, port, sender_email, rcv_maillist, user_name, password, df, client_name,
+               delivery_products_list, delivery_type_list, release, cs_lead_name, delivery_method,
+               min_max_date_df,s3_location,product_paths_file,file_password):
     try:
         # Generate the email content
         # Create the directory path for saving the Excel file
@@ -271,8 +305,8 @@ def send_email(smtp_server, port, sender_email, rcv_maillist, subject, user_name
         # Ensure the directory exists
         os.makedirs(save_directory, exist_ok=True)
         body = generate_client_email_text(df, client_name, release, delivery_products_list, delivery_type_list,
-                                          cs_lead_name, cs_lead_email,
-                                          delivery_method, min_max_date_df, s3_location,password)
+                                          cs_lead_name,
+                                          delivery_method, min_max_date_df, s3_location,file_password)
         subject = "Delivery Counts:" + client_name + ", " + str(release)
         # Create the email message
         message = MIMEMultipart()
@@ -367,56 +401,219 @@ def send_email(smtp_server, port, sender_email, rcv_maillist, subject, user_name
         print("Failed to send email")
         print("error:",e)
 
+# Sub-function to handle RWD360 data processing
+def process_rwd360_counts(product, iteration, client, rs_conn):
+    schema_list = create_schema_list(product['df'])
+    # Retrieve schemas based on the presence of claims
+    #print(product['df'])
+    rwd360_delivery_schema = next(iter(product['df'][~product['df']['SCHEMA NAME'].str.contains('open', case=False, na=False)]['SCHEMA NAME']), 'NA')
+    rwd360_claims_delivery_schema = next(iter(product['df'][product['df']['SCHEMA NAME'].str.contains('open', case=False, na=False)]['SCHEMA NAME']), 'NA')
+    rwd360_label_delivery_schema = rwd360_delivery_schema
+
+    if rwd360_claims_delivery_schema != 'NA':
+        # Prepare SQL queries for RWD360 with claims
+        rwd360_formatted_sql = format_rwd360_claims_script(rwd360_ehr_sql_template, rwd360_delivery_schema,rwd360_claims_delivery_schema,iteration, client,config.patient_metadata_schema)
+        rwd360_claims_formatted_sql = format_rwd360_claims_script(rwd360_ehr_claims_sql_template,rwd360_delivery_schema,rwd360_claims_delivery_schema, iteration, client,config.patient_metadata_schema)
+        rwd360_mo_formatted_sql = format_rwd360_claims_script(rwd360_ehr_mo_sql_template, rwd360_delivery_schema,rwd360_claims_delivery_schema,iteration, client,'NA')
+        rwd360_label_formatted_sql = format_rwd360_claims_script(rwd360_ehr_label_sql_template, rwd360_delivery_schema,rwd360_claims_delivery_schema, iteration, client,'NA')
+
+        #print('ehr sql script--',rwd360_formatted_sql)
+
+
+        #print(rwd360_mo_formatted_sql)
+        rwd360_mo_sql =pd.read_sql(rwd360_mo_formatted_sql, rs_conn)
+
+        combine_rwd360_mo_sql = combine_sql_query(rwd360_mo_sql)
+
+        rwd360_df = pd.read_sql(rwd360_formatted_sql, rs_conn)
+        rwd360_df.to_csv('delivery_counts_scripts/rwd360_df.csv', index=False)
+        rwd360_claims_df = pd.read_sql(rwd360_claims_formatted_sql, rs_conn)
+        rwd360_mo_df = pd.read_sql(combine_rwd360_mo_sql, rs_conn)
+        rwd360_label_df = pd.read_sql(rwd360_label_formatted_sql, rs_conn)
+        # print(rwd360_df)
+        # print(rwd360_mo_df)
+        # print(pd.concat([rwd360_df, rwd360_claims_df, rwd360_mo_df, rwd360_label_df], ignore_index=True))
+        # Concatenate all RWD360 related dataframes
+        print(rwd360_claims_formatted_sql)
+        rwd360_claims_df.to_csv('delivery_counts_scripts/rwd360_claims_df.csv', index=False)
+
+        return pd.concat([rwd360_df, rwd360_claims_df, rwd360_mo_df, rwd360_label_df], ignore_index=True)
+
+    else:
+        # Prepare SQL queries for RWD360 without claims
+        rwd360_formatted_sql = format_rwd360_claims_script(rwd360_ehr_sql_template, rwd360_delivery_schema, iteration, client,config.patient_metadata_schema)
+        rwd360_label_formatted_sql = format_rwd360_claims_script(rwd360_ehr_label_sql_template, rwd360_label_delivery_schema, iteration, client,'NA')
+
+        rwd360_mo_formatted_sql = format_rwd360_claims_script(rwd360_ehr_mo_sql_template, rwd360_delivery_schema, iteration, client,'NA')
+        rwd360_mo_sql = pd.read_sql(rwd360_mo_formatted_sql, rs_conn)
+        combine_rwd360_mo_sql = combine_sql_query(rwd360_mo_sql)
+
+        rwd360_df = pd.read_sql(rwd360_formatted_sql, rs_conn)
+        rwd360_mo_df = pd.read_sql(combine_rwd360_mo_sql, rs_conn)
+        rwd360_label_df = pd.read_sql(rwd360_label_formatted_sql, rs_conn)
+
+        #print(pd.concat([rwd360_df, rwd360_mo_df, rwd360_label_df], ignore_index=True))
+
+
+        # Concatenate RWD360 related dataframes without claims
+        return pd.concat([rwd360_df, rwd360_mo_df, rwd360_label_df], ignore_index=True)
+
+def process_min_max_date(product,schema_list, iteration, client, rs_conn, min_max_date_sql_file_name,product_min_max):
+    date_formatted_sql = format_sql_script(min_max_date_sql_file_name, schema_list, iteration, client)
+    date_df = pd.read_sql(date_formatted_sql, rs_conn)
+    min_max_date_query = combine_sql_query(date_df)
+    print(min_max_date_query)
+    min_max_date_df = pd.read_sql(min_max_date_query, rs_conn)
+    print(product_min_max)
+    min_max_date_df['Product'] = product_min_max
+    min_max_date_df['Client'] = client
+    print('min_max_date_df:',schema_list,':',min_max_date_df)
+    return min_max_date_df
 def generate_client_delivery_counts(customer_filtered_df,iteration,client,config):
     # filter data for each product PT360,PR360,TR360,RWD360,GN360
     ## Patient360
-    pt360_df = customer_filtered_df[customer_filtered_df['PRODUCT'].str.contains('PT360', na=False)]
+    print('customer_filtered_df:',customer_filtered_df)
+    pt360_df = customer_filtered_df[customer_filtered_df['PRODUCT'].str.contains('PT360', na=False) & ~customer_filtered_df['PRODUCT'].str.contains('Analytical', na=False)& ~customer_filtered_df['PRODUCT'].str.contains('REGISTRY', na=False)]
     # RWD360
-    rwd360_df = customer_filtered_df[customer_filtered_df['PRODUCT'].str.contains('RWD360', na=False)]
+    rwd360_df = customer_filtered_df[customer_filtered_df['PRODUCT'].str.contains('RWD360', na=False) & ~customer_filtered_df['PRODUCT'].str.contains('Analytical', na=False)]
+    print(rwd360_df)
     # Precision 360
     pr360_df = customer_filtered_df[customer_filtered_df['PRODUCT'].str.contains('PR360', na=False)]
     # Transactional 360
     tr360_df = customer_filtered_df[customer_filtered_df['PRODUCT'].str.contains('TR360', na=False)]
     # Genome 360
     gn360_df = customer_filtered_df[customer_filtered_df['PRODUCT'].str.contains('GN360', na=False)]
+    # Custom Cohort
+    pt360_fast_registry = customer_filtered_df[
+        customer_filtered_df['PRODUCT'].str.contains('PT360', na=False) & customer_filtered_df['PRODUCT'].str.contains(
+            'REGISTRY', na=False) & ~customer_filtered_df['PRODUCT'].str.contains('Analytical', na=False)]
+    print('pt360_fast_registry',pt360_fast_registry)
+    pt360_analytical_layer_df=customer_filtered_df[customer_filtered_df['PRODUCT'].str.contains('PT360', na=False) & customer_filtered_df['PRODUCT'].str.contains('Analytical', na=False)& ~customer_filtered_df['PRODUCT'].str.contains('REGISTRY', na=False)]
+    rwd360_analytical_layer_df = customer_filtered_df[customer_filtered_df['PRODUCT'].str.contains('RWD360', na=False) & customer_filtered_df['PRODUCT'].str.contains('Analytical', na=False)]
+    registry_analytical_layer_df=customer_filtered_df[customer_filtered_df['PRODUCT'].str.contains('Analytical', na=False)& customer_filtered_df['PRODUCT'].str.contains('REGISTRY', na=False)]
+    custom_df = customer_filtered_df[customer_filtered_df['PRODUCT'].str.contains('CUSTOM', na=False)& ~customer_filtered_df['PRODUCT'].str.contains('PT360', na=False)]
+
+    product_configs = [
+        {
+            'name': 'Patient360',
+            'df': pt360_df,
+            'sql_template': config.pt360_sql_template
+         },
+        {
+            'name': 'PT360Analytical Layer',
+            'df': pt360_analytical_layer_df,
+            'sql_template': config.al_registry_sql_template
+        },
+         {
+            'name': 'TR360',
+            'df': tr360_df,
+            'sql_template': config.tr360_sql_template
+         },
+        {
+            'name': 'PT360FastRegistry',
+            'df': pt360_fast_registry,
+            'sql_template': config.al_registry_sql_template
+        },
+        {
+            'name': 'RegistryAL',
+            'df': registry_analytical_layer_df,
+            'sql_template': config.al_registry_sql_template
+        },
+
+        {
+            'name': 'RWD360',
+            'df': rwd360_df,
+            'sql_template': 'NA'
+        },
+
+        {
+            'name': 'RWD360Analytical Layer',
+            'df': rwd360_analytical_layer_df,
+            'sql_template': config.al_registry_sql_template
+        },
+        {
+            'name': 'Precision360',
+            'df': pr360_df,
+            'sql_template': config.pr360_sql_template
+        }
+        ,
+        {
+            'name': 'Genome360',
+            'df': gn360_df,
+            'sql_template': config.gn360_sql_template
+        },
+
+        {
+            'name': 'custom_df',
+            'df': custom_df,
+            'sql_template': config.al_registry_sql_template
+        }
+    ]
 
     try:
         rs_conn = redshift_conn(db_control_dict)
         #cur = rs_conn.cursor()
         min_max_date_sql_file_name =config.min_max_date_sql_template
-        if ~(pt360_df.empty):
-            schema_list = create_schema_list(pt360_df)
-            sql_file_name = config.pt360_sql_template
-            pt360_formatted_sql = format_sql_script(sql_file_name, schema_list, iteration, client)
-            df = pd.read_sql(pt360_formatted_sql, rs_conn)
-            #df = pd.read_sql(pt360_formatted_sql, engine)
-            #df.to_csv('delivery_counts_scripts/pt360sql.csv', index=False)
-            count_query = combine_sql_query(df)
-            pt360_cnt_df = pd.read_sql(count_query, rs_conn)
-            #pt360_cnt_df = pd.read_sql(count_query, engine)
-            # get min max date for the schema list
-            date_formatted_sql = format_sql_script(min_max_date_sql_file_name, schema_list, iteration, client)
-            date_df = pd.read_sql(date_formatted_sql, rs_conn)
-            #date_df = pd.read_sql(date_formatted_sql, engine)
-            print(date_df)
-            min_max_date_query = combine_sql_query(date_df)
-            p360_min_max_date_df=pd.read_sql(min_max_date_query, rs_conn)
-            #p360_min_max_date_df = pd.read_sql(min_max_date_query, engine)
-            p360_min_max_date_df['Product'] = 'Patient360'
-            p360_min_max_date_df['Client'] = client
-            print(p360_min_max_date_df)
 
-        # if ~(rwd360_df.empty):
-        #     schema_list = create_schema_list(rwd360_df)
-        #     # print(schema_list)
-        #     sql_file_name = config.rwd360_sql_template
-        #     rwd360_formatted_sql = format_sql_script(sql_file_name, schema_list, iteration, client)
-        #     # print(rwd360_formatted_sql)
+        #all_count_dfs = []
+        #all_min_max_date_dfs = []
+        all_count_dfs = pd.DataFrame()
+        all_min_max_date_dfs = pd.DataFrame()
 
-        final_delivery_counts=pt360_cnt_df
-        final_max_min_date=p360_min_max_date_df
+        for product in product_configs:
+            print (product['name'])
+            delivery_type =''
+            # print(product['df'])
+            if not product['df'].empty and product['name']!='RWD360':
+                #print('product_df-',product['df'])
+                schema_list = create_schema_list(product['df'])
+                formatted_sql = format_sql_script(product['sql_template'], schema_list, iteration, client)
+                df = pd.read_sql(formatted_sql, rs_conn)
+                count_query = combine_sql_query(df)
+                delivery_count_df = pd.read_sql(count_query, rs_conn)
+                #all_count_dfs.append(count_df)
+                #product_min_max = delivery_count_df['delivery_type'].str.replace('-Claims', '', regex=False)
+
+            elif not product['df'].empty and product['name']=='RWD360':
+                # print('Process RWD360 data')
+                # print(product)
+                delivery_count_df = process_rwd360_counts(product, iteration, client, rs_conn)
+                delivery_count_df = apply_row_filter(delivery_count_df, client.lower())
+
+
+            else: continue
+
+            #all_count_dfs.append(delivery_count_df)
+
+            distinct_delivery_types = delivery_count_df['delivery_type'] \
+                .str.replace('-Claims', '', regex=False) \
+                .dropna().unique().tolist()
+            product_min_max = ', '.join(distinct_delivery_types)
+            print('distinct_delivery_types',product_min_max)
+            all_count_dfs = pd.concat([all_count_dfs, delivery_count_df], ignore_index=True)
+            #print('all_count_dfs_columns',all_count_dfs.columns)
+
+
+    ## Generate min/max date SQL and query
+            schema_list = create_schema_list(product['df'])
+            #extract delivery_type and pass as product in min_max_df
+
+            #product_min_max = all_count_dfs['delivery_type'].str.replace('-Claims', '', regex=False)
+            #print('schemalist:', schema_list, ':', product_min_max)
+            min_max_date_df=process_min_max_date(product,schema_list, iteration, client, rs_conn, min_max_date_sql_file_name,product_min_max)
+
+            print(min_max_date_df)
+            all_min_max_date_dfs = pd.concat([all_min_max_date_dfs, min_max_date_df], ignore_index=True)
+            #all_min_max_date_dfs.append(min_max_date_df)
+
+        # Combine all data
+        final_delivery_counts = all_count_dfs
+        final_max_min_date = all_min_max_date_dfs
+        # final_delivery_counts = pd.concat(all_count_dfs, ignore_index=True)
+        # final_max_min_date = pd.concat(all_min_max_date_dfs, ignore_index=True)
 
         final_delivery_counts.to_csv('delivery_counts_scripts/final_delivery_counts.csv', index=False)
+        #final_delivery_counts['patient_count'] = final_delivery_counts['patient_count'].astype(int)
         return(final_delivery_counts, final_max_min_date)
 
     finally:
@@ -424,19 +621,19 @@ def generate_client_delivery_counts(customer_filtered_df,iteration,client,config
 
 
 
-def main():
 
+def main():
     for client in client_list:
         customer_filtered_df=input_delivery_df[input_delivery_df['ITERATION'] == int(iteration)]
         customer_filtered_df= customer_filtered_df[customer_filtered_df['CLIENT']==client]
 
-        delivery_count_df,max_min_date_df=generate_client_delivery_counts(customer_filtered_df, iteration, client, config)
+        delivery_count_df,min_max_date_df=generate_client_delivery_counts(customer_filtered_df, iteration, client, config)
 
-        cs_lead_email,delivery_method,s3_location,file_password,cs_lead_name=get_client_delivery_details(config.client_delivery_details_file,iteration,client)
+        delivery_method,s3_location,file_password,cs_lead_name=get_client_delivery_details(config.client_delivery_details_file,iteration,client)
 
         rcv_maillist = get_emails_by_client(client.upper())
         print(rcv_maillist)
-
+        print(delivery_count_df)
         delivery_products_list = delivery_count_df['product'].unique().tolist()
         # delivery_products_list = [re.sub(r'[^\x00-\x7F]+', '', Product) for Product in delivery_products_list]
         delivery_type_list = delivery_count_df['delivery_type'].unique().tolist()
@@ -452,13 +649,15 @@ def main():
             'patient_count': 'Patient Count'
         }, inplace=True)
         # converting Patient count in 1000 format
-        delivery_count_df['Patient Count'] = pd.to_numeric(delivery_count_df['Patient Count'], errors='coerce')
-        delivery_count_df['Patient Count'] = delivery_count_df['Patient Count'].apply(lambda x: "{:,}".format(x))
 
-        send_email(smtp_server,port,sender_email, rcv_maillist, f"Delivery Counts: {client}",
+        delivery_count_df['Patient Count'] = delivery_count_df['Patient Count'].apply(format_patient_count)
+
+        delivery_count_df = delivery_count_df.sort_values(by=['Indication', 'Addon', 'Format', 'Product'])
+
+
+        send_email(smtp_server, port, sender_email, rcv_maillist,
                    user_name, password, delivery_count_df, client, delivery_products_list,
                    delivery_type_list, release,
-                   cs_lead_name, cs_lead_email, delivery_method, max_min_date_df, s3_location, dd_filepath_details)
-
+                   cs_lead_name, delivery_method, min_max_date_df, s3_location, dd_filepath_details, file_password)
 if __name__ == '__main__':
     main()

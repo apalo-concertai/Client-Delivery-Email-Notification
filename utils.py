@@ -59,11 +59,18 @@ class Config:
         self.input_file_path = config['run_param']['input_file_path']
 
         self.pt360_sql_template=config['sql_param']['pt360_sql_template']
-        self.rwd360_sql_template = config['sql_param']['rwd360_sql_template']
+        self.rwd360_ehr_sql_template = config['sql_param']['rwd360_ehr_sql_template']
+        self.rwd360_ehr_claims_sql_template = config['sql_param']['rwd360_ehr_claims_sql_template']
+        self.rwd360_ehr_label_sql_template=config['sql_param']['rwd360_ehr_label_sql_template']
+        self.rwd360_ehr_mo_sql_template = config['sql_param']['rwd360_ehr_mo_sql_template']
         self.pr360_sql_template = config['sql_param']['pr360_sql_template']
         self.tr360_sql_template = config['sql_param']['tr360_sql_template']
         self.gn360_sql_template = config['sql_param']['gn360_sql_template']
         self.custom_sql_template = config['sql_param']['custom_sql_template']
+        self.al_registry_sql_template = config['sql_param']['al_registry_sql_template']
+
+        self.patient_metadata_schema=config['sql_param']['patient_metadata_schema']
+
         self.min_max_date_sql_template = config['sql_param']['min_max_date_sql_template']
 
         self.port=config['smtp_param']['port']
@@ -93,6 +100,16 @@ def create_schema_list(df):
     schema_list = df['SCHEMA NAME'].dropna().unique()  # Drop NaNs and get unique values
     schema_string = ','.join(f"'{s}'" for s in schema_list)
     return schema_string
+
+def format_rwd360_claims_script(sql_file_name,rwd360_delivery_schema,rwd360_claims_delivery_schema,iteration,client,patient_metadata_schema):
+    with open('delivery_counts_scripts/{}'.format(sql_file_name), 'r') as f:
+        sql_body = f.read()
+    sql_body_formatted = sql_body.replace('#iteration', iteration)
+    sql_body_formatted = sql_body_formatted.replace('#customer', client)
+    sql_body_formatted = sql_body_formatted.replace('#rwd360_delivery_schema',rwd360_delivery_schema )
+    sql_body_formatted = sql_body_formatted.replace('#rwd360_claims_delivery_schema', rwd360_claims_delivery_schema)
+    sql_body_formatted = sql_body_formatted.replace('#patient_metadata_schema', patient_metadata_schema)
+    return(sql_body_formatted)
 
 def format_sql_script(sql_file_name,schema_string,iteration,client):
     with open('delivery_counts_scripts/{}'.format(sql_file_name), 'r') as f:
@@ -151,4 +168,35 @@ def get_emails_by_client(client_name):
         return None
 
 # get_emails_by_client(client_name, file_path)
+
+def apply_row_filter(df, customer_key):
+    print(customer_key)
+    config = configparser.ConfigParser()
+    config.read("config.ini")
+
+    try:
+        filter_expr = config[f"filters.{customer_key.lower()}"]['filter']
+    except KeyError:
+        print(f"No filter expression found for customer '{customer_key}'. Returning unfiltered DataFrame.")
+        return df
+
+    def safe_eval(row):
+        try:
+            return bool(eval(filter_expr, {"re": re}, row.to_dict()))
+        except Exception as e:
+            # Optional: log error per row if needed
+            # print(f"Row filter error: {e}")
+            return False
+    print(df[df.apply(safe_eval, axis=1)])
+    return df[df.apply(safe_eval, axis=1)]
+
+def format_patient_count(val):
+    try:
+        # Try converting to float and then int
+        int_val = int(float(val))
+        return "{:,}".format(int_val)
+    except (ValueError, TypeError):
+        # If conversion fails, return the original string
+        return val
+
 

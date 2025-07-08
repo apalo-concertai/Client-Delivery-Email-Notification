@@ -1,7 +1,7 @@
 iteration,client,deliverymethod,s3location,password,cs_lead_name,cs_lead_email
 1,AMGEN,PARQUET,https://c3-1300-prod-ingress-egress.s3.dualstack.us-east-1.amazonaws.com/concert_to_amgen/202504/,,Srinivasan Munisamappa,
-1,BMS,PARQUET,https://b4-ingress-egress-bucket-01.s3.us-east-1.amazonaws.com/BMS_202504/ ,Cd567tecD,Srinivasan Munisamappa,
-1,JJIM,PARQUET,https://c3-2300-prod-ingress-egress.s3.dualstack.us-east-1.amazonaws.com/concerto_to_jnj_vs-273/RWD/202504/,,Srinivasan Munisamappa,
+,BMS,PARQUET,https://b4-ingress-egress-bucket-01.s3.us-east-1.amazonaws.com/BMS_202504/ ,,Srinivasan Munisamappa,
+1,JJIM,PARQUET,https://c3-2300-prod-ingress-egress.s3.dualstack.us-east-1.amazonaws.com/concerto_to_jnj_vs-273/RWD/202505/,,Srinivasan Munisamappa,
 1,BAYER,PARQUET,s3://kumo-exchange-us-east-1/3e801997/Bayer/202504/,,Srinivasan Munisamappa,
 1,REGENERON,PARQUET,https://c3-2400-prod-ingress-egress.s3.dualstack.us-east-1.amazonaws.com/concerto_to_regeneron/202504/,,Srinivasan Munisamappa,
 2,AMGEN,PARQUET,https://c3-1300-prod-ingress-egress.s3.dualstack.us-east-1.amazonaws.com/concert_to_amgen/202504/,,Srinivasan Munisamappa,

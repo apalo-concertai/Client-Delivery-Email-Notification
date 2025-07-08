@@ -1,0 +1,86 @@
+iteration,customer,delivery_type,product,format,addon,indication,subscription_category,subscription_subcategory,patient_count
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Marginal Zone Lymphoma (MZL),Standard Subscription,Standard,9179
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Malignant peripheral nerve sheath tumor (count includes peripheral nerves & autonomic nervous system),Standard Subscription,Standard,1380
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Myeloid Sarcoma,Standard Subscription,Standard,630
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Mycosis Fungoides,Standard Subscription,Standard,7404
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Hairy cell leukemia (HCL),Standard Subscription,Standard,4096
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Gastroesophageal Cancer (GEC),Standard Subscription,Standard,70684
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Renal Cell Carcinoma (RCC),Standard Subscription,Standard,95882
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Pancreatic Cancer,Standard Subscription,Standard,81275
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Other solid tumor cancers,Standard Subscription,Standard,267845
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Cutaneous Squamous Cell Carcinoma (cSCC),Standard Subscription,Standard,142408
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Burkitt Lymphoma,Standard Subscription,Standard,2733
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),T-cell lymphoma,Standard Subscription,Standard,12864
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Melanoma,Standard Subscription,Standard,157908
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Gastric Cancer,Standard Subscription,Standard,33974
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Acute Myeloid Leukemia (AML),Standard Subscription,Standard,34969
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Biliary Tract Cancer (BTC),Standard Subscription,Standard,30574
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),"Ovarian cancer (count includes ovarian, fallopian, & peritoneal)",Standard Subscription,Standard,73913
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Multiple Myeloma (MM),Standard Subscription,Standard,77696
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Hodgkin's lymphoma (HL),Standard Subscription,Standard,34859
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Cervical Cancer,Standard Subscription,Standard,47591
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Small Lymphocytic Lymphoma (SLL),Standard Subscription,Standard,17542
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Myelofibrosis (MF),Standard Subscription,Standard,10667
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Uterine cancer,Standard Subscription,Standard,121659
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Sezary disease,Standard Subscription,Standard,757
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),"Heart, mediastinum, and pleura cancers",Standard Subscription,Standard,3950
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Appendix Cancer,Standard Subscription,Standard,9594
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Anaplastic large cell lymphoma (ALCL),Standard Subscription,Standard,2126
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Hepatocellular Carcinoma (HCC),Standard Subscription,Standard,66344
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Mesothelioma,Standard Subscription,Standard,4864
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Mantle Cell Lymphoma (MCL),Standard Subscription,Standard,9257
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Thymus cancer,Standard Subscription,Standard,3264
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Endometrial Cancer,Standard Subscription,Standard,120938
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Ocular cancer,Standard Subscription,Standard,9875
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Esophageal Cancer,Standard Subscription,Standard,43960
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Non-Hodgkin's lymphoma (NHL),Standard Subscription,Standard,193263
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Endocrine Cancer,Standard Subscription,Standard,105072
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Fallopian Tube Cancer,Standard Subscription,Standard,5378
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Anal Cancer,Standard Subscription,Standard,22817
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Lymphoblastic lymphoma (LL),Standard Subscription,Standard,2500
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Urothelial Cancer,Standard Subscription,Standard,119560
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Plasma cell leukemia (PCL),Standard Subscription,Standard,1263
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Lung Cancers,Standard Subscription,Standard,347557
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Basal Cell Carcinoma (BCC),Standard Subscription,Standard,243195
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Follicular lymphoma (FL),Standard Subscription,Standard,44860
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Blastic plasmacytoid dendritic cell neoplasm (BPDCN),Standard Subscription,Standard,282
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Acute Lymphoblastic Leukemia (ALL),Standard Subscription,Standard,16213
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Female genital organ cancers,Standard Subscription,Standard,35898
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Small intestine cancer,Standard Subscription,Standard,9447
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Breast Cancer,Standard Subscription,Standard,815826
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Diffuse Large B-Cell Lymphoma (DLBCL),Standard Subscription,Standard,55518
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Extramedullary Plasmacytoma,Standard Subscription,Standard,1231
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Castleman Disease,Standard Subscription,Standard,1212
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Bladder Cancer,Standard Subscription,Standard,107064
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Prostate Cancer,Standard Subscription,Standard,373162
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Other Hematologic Malignancies,Standard Subscription,Standard,48914
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),"Myeloproliferative neoplasms (MPN) - includes ET,PV, & MF",Standard Subscription,Standard,126399
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Polycythemia vera (PV),Standard Subscription,Standard,38274
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Male genital organ cancers,Standard Subscription,Standard,26637
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Merkel Cell Carcinoma (MCC),Standard Subscription,Standard,5289
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Central nervous system (CNS) cancers,Standard Subscription,Standard,52761
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Testicular Cancer,Standard Subscription,Standard,23051
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Peripheral nerves and autonomic nervous system (count includes Malignant peripheral nerve sheath tumor),Standard Subscription,Standard,1380
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Pan-Cancer,Standard Subscription,Standard,3648391
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Colorectal Cancer (CRC),Standard Subscription,Standard,277141
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Waldenstrom macroglobulinemia (WM),Standard Subscription,Standard,9209
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Acute promyelocytic leukemia (APL),Standard Subscription,Standard,2675
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Head and neck cancer (HNSCC),Standard Subscription,Standard,158266
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Kaposi Sarcoma,Standard Subscription,Standard,2635
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Peripheral T cell lymphoma (PTCL),Standard Subscription,Standard,4099
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Chronic Myelomonocytic Leukemia (CMML),Standard Subscription,Standard,5438
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Solitary Plasmacytoma,Standard Subscription,Standard,4372
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Colon Cancer,Standard Subscription,Standard,220424
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Brain Cancer,Standard Subscription,Standard,48078
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Carcinoid Syndrome,Standard Subscription,Standard,5401
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Bone and Cartilage Cancer,Standard Subscription,Standard,22544
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Chronic lymphocytic leukemia (CLL),Standard Subscription,Standard,86623
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Essential thrombocythemia (ET),Standard Subscription,Standard,84949
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Systemic Mastocytosis,Standard Subscription,Standard,1621
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Peritoneal Cancer,Standard Subscription,Standard,8392
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Thyroid Cancer,Standard Subscription,Standard,90366
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Neuroendocrine tumors (NET),Standard Subscription,Standard,49469
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Monoclonal gammopathy of undetermined significance (MGUS),Standard Subscription,Standard,121341
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Myelodysplastic syndrome (MDS),Standard Subscription,Standard,59321
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Chronic Myeloid Leukemia (CML),Standard Subscription,Standard,19280
+1,BMS,RWD360-Claims,RWD360,Open Claims - Common Data Model (CDM),Core Data Product (Base),Gastrointestinal Stromal Tumor (GIST),Standard Subscription,Standard,11897

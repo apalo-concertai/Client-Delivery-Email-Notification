@@ -1,0 +1,75 @@
+ITERATION,PRODUCT,CLIENT,SCHEMA NAME
+1,PT360,ABBVIE,c3_pt360_202506_nsclc
+1,PT360,ABBVIE,c3_pt360_202506_crc
+1,PT360,ABBVIE,c3_pt360_202506_sclc_rwc
+1,PT360,ABBVIE,c3_pt360_202506_hcc_rwc
+1,PT360 Analytical Layer,ABBVIE,c3_pt360_analytical_layer_202506_crc
+1,PT360 Analytical Layer,ABBVIE,c3_pt360_analytical_layer_202506_hcc_rwc
+1,PT360 Analytical Layer,ABBVIE,c3_pt360_analytical_layer_202506_nsclc
+1,PT360 Analytical Layer,ABBVIE,c3_pt360_analytical_layer_202506_sclc_rwc
+1,PT360 LINKED OPEN CLAIMS,ABBVIE,c3_pt360_open_202506_nsclc
+1,PT360 LINKED OPEN CLAIMS,ABBVIE,c3_pt360_open_202506_crc
+1,PT360 LINKED OPEN CLAIMS,ABBVIE,c3_pt360_open_202506_sclc_rwc
+1,PT360 LINKED OPEN CLAIMS,ABBVIE,c3_pt360_open_202506_hcc_rwc
+1,PT360,ASCLEPIUS ANALYTICS,c3_pt360_202506_prostate
+1,PT360 Analytical Layer,ASCLEPIUS ANALYTICS,c3_pt360_analytical_layer_202506_prostate_novartis
+1,PT360 LINKED OPEN CLAIMS,ASCLEPIUS ANALYTICS,c3_pt360_open_202506_prostate
+1,PT360,JJIM,c3_pt360_202506_bladder
+1,PT360 Analytical Layer,JJIM,c3_pt360_analytical_layer_202506_bladder
+1,PT360 LINKED OPEN CLAIMS,JJIM,c3_pt360_open_202506_bladder
+1,RWD360,JJIM,c3_rwd360_202506_jnj
+1,RWD360 LINKED OPEN CLAIMS,JJIM,c3_rwd360_open_202506_jnj
+1,PT360,AMGEN,c3_pt360_202506_sclc
+1,PT360,AMGEN,c3_pt360_202506_prostate_rwc
+1,PT360 Analytical Layer,AMGEN,c3_pt360_analytical_layer_202506_prostate_rwc_amgen
+1,PT360 Analytical Layer,AMGEN,c3_pt360_analytical_layer_202506_sclc
+1,PT360 LINKED OPEN CLAIMS,AMGEN,c3_pt360_open_202506_sclc
+1,PT360 LINKED OPEN CLAIMS,AMGEN,c3_pt360_open_202506_prostate_rwc
+1,RWD360,AMGEN,c3_rwd360_202506_amgen
+1,RWD360 Analytical Layer,AMGEN,c3_rwd360_analytical_layer_202506_amgen
+1,RWD360 LINKED OPEN CLAIMS,AMGEN,c3_rwd360_open_202506_amgen
+1,PT360,BMS,c3_pt360_202506_breast_rwc_bms
+1,PT360,BMS,c3_pt360_202506_nsclc_bms
+1,PT360,BMS,c3_pt360_202506_melanoma_bms
+1,PT360 Analytical Layer,BMS,c3_pt360_analytical_layer_202506_melanoma_bms
+1,PT360 Analytical Layer,BMS,c3_pt360_analytical_layer_202506_breast_rwc
+1,PT360 Analytical Layer,BMS,c3_pt360_analytical_layer_202506_nsclc
+1,PT360 Analytical Layer-REGISTRY,BMS,c3_pt360_analytical_layer_202506_melanoma_bms_registry
+1,PT360 LINKED OPEN CLAIMS,BMS,c3_pt360_open_202506_breast_rwc
+1,PT360 LINKED OPEN CLAIMS,BMS,c3_pt360_open_202506_nsclc
+1,PT360 LINKED OPEN CLAIMS,BMS,c3_pt360_open_202506_melanoma
+1,PT360 REGISTRY- STAGE,BMS,c3_pt360_202506_melanoma_bms_registry
+1,PT360 REGISTRY- STAGE LINKED OPEN CLAIMS,BMS,c3_pt360_open_202506_melanoma_bms_registry
+1,RWD360,BMS,c3_rwd360_202506_bms
+1,RWD360 LINKED OPEN CLAIMS,BMS,c3_rwd360_open_202506_bms
+1,PT360,DSI,c3_pt360_202506_breast_rwc
+1,PT360,DSI,c3_pt360_202506_nsclc
+1,PT360,DSI,c3_pt360_202506_sclc_rwc
+1,PT360,DSI,c3_pt360_202506_prostate_rwc
+1,PT360,DSI,c3_pt360_202506_ovarian
+1,PT360 Analytical Layer,DSI,c3_pt360_analytical_layer_202506_breast_rwc
+1,PT360 Analytical Layer,DSI,c3_pt360_analytical_layer_202506_nsclc
+1,PT360 Analytical Layer,DSI,c3_pt360_analytical_layer_202506_prostate_rwc
+1,PT360 Analytical Layer,DSI,c3_pt360_analytical_layer_202506_sclc_rwc
+1,PT360 LINKED OPEN CLAIMS,DSI,c3_pt360_open_202506_breast_rwc
+1,PT360 LINKED OPEN CLAIMS,DSI,c3_pt360_open_202506_nsclc
+1,PT360 LINKED OPEN CLAIMS,DSI,c3_pt360_open_202506_sclc_rwc
+1,PT360 LINKED OPEN CLAIMS,DSI,c3_pt360_open_202506_prostate_rwc
+1,PT360 LINKED OPEN CLAIMS,DSI,c3_pt360_open_202506_ovarian
+1,PT360 Analytical Layer,DSI,c3_pt360_analytical_layer_202506_ovarian
+1,PT360,ERACE EMORY,c3_pt360_202506_nsclc
+1,PT360,ERACE EMORY,c3_pt360_202506_breast
+1,PT360 LINKED OPEN CLAIMS,ERACE EMORY,c3_pt360_open_202506_nsclc
+1,PT360 LINKED OPEN CLAIMS,ERACE EMORY,c3_pt360_open_202506_breast
+1,PT360,NOVARTIS,c3_pt360_202506_prostate
+1,PT360 Analytical Layer,NOVARTIS,c3_pt360_analytical_layer_202506_prostate_novartis
+1,PT360 LINKED OPEN CLAIMS,NOVARTIS,c3_pt360_open_202506_prostate
+1,PT360,TAIHO,c3_pt360_202506_crc_rwc
+1,PT360 LINKED OPEN CLAIMS,TAIHO,c3_pt360_open_202506_crc_rwc
+1,TR360,BAYER,c3_tr360_nsclc_gh_ruo_202503_bayer
+1,PT360 Melanoma & Opdualag REGISTRY,REGENERON,c3_pt360_202503_melanoma_regeneron_opdualag_registry
+1,PT360 Melanoma & Opdualag REGISTRY - linked claims,REGENERON,c3_pt360_open_202503_melanoma_regeneron_opdualag_registry
+1,PT360 Melanoma & Opdualag REGISTRY (Non Claims),REGENERON,c3_pt360_202503_mo_melanoma_regeneron
+1,PT360,MERCK,c3_pt360_202506_rcc_merck
+1,PT360 LINKED OPEN CLAIMS,MERCK,c3_pt360_open_202506_rcc_merck
+1,PT360 Analytical Layer,MERCK,c3_pt360_analytical_layer_202506_rcc_merck

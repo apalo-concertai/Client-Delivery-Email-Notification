@@ -1,0 +1,86 @@
+iteration,customer,delivery_type,product,format,addon,indication,subscription_category,subscription_subcategory,patient_count
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),"Ovarian cancer (count includes ovarian, fallopian, & peritoneal)",Standard Subscription,Standard,91160
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Multiple Myeloma (MM),Standard Subscription,Standard,98730
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Hodgkin's lymphoma (HL),Standard Subscription,Standard,42460
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Small Lymphocytic Lymphoma (SLL),Standard Subscription,Standard,20668
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Cervical Cancer,Standard Subscription,Standard,56194
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Bladder Cancer,Standard Subscription,Standard,124246
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Mycosis Fungoides,Standard Subscription,Standard,8977
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Hairy cell leukemia (HCL),Standard Subscription,Standard,4762
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Breast Cancer,Standard Subscription,Standard,936251
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Diffuse Large B-Cell Lymphoma (DLBCL),Standard Subscription,Standard,69232
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Castleman Disease,Standard Subscription,Standard,1374
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Extramedullary Plasmacytoma,Standard Subscription,Standard,1507
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Appendix Cancer,Standard Subscription,Standard,11460
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Anaplastic large cell lymphoma (ALCL),Standard Subscription,Standard,2534
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Renal Cell Carcinoma (RCC),Standard Subscription,Standard,111547
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Pancreatic Cancer,Standard Subscription,Standard,104640
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Gastroesophageal Cancer (GEC),Standard Subscription,Standard,90895
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Blastic plasmacytoid dendritic cell neoplasm (BPDCN),Standard Subscription,Standard,346
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Female genital organ cancers,Standard Subscription,Standard,41252
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Small intestine cancer,Standard Subscription,Standard,11669
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Acute Lymphoblastic Leukemia (ALL),Standard Subscription,Standard,20097
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Prostate Cancer,Standard Subscription,Standard,420313
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Gastric Cancer,Standard Subscription,Standard,44384
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Acute Myeloid Leukemia (AML),Standard Subscription,Standard,47654
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Melanoma,Standard Subscription,Standard,178644
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Biliary Tract Cancer (BTC),Standard Subscription,Standard,38141
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Uterine cancer,Standard Subscription,Standard,138880
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Myelofibrosis (MF),Standard Subscription,Standard,14485
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),"Heart, mediastinum, and pleura cancers",Standard Subscription,Standard,5657
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Sezary disease,Standard Subscription,Standard,1019
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),"Myeloproliferative neoplasms (MPN) - includes ET,PV, & MF",Standard Subscription,Standard,145634
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Polycythemia vera (PV),Standard Subscription,Standard,44171
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Other Hematologic Malignancies,Standard Subscription,Standard,59527
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Male genital organ cancers,Standard Subscription,Standard,30767
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Merkel Cell Carcinoma (MCC),Standard Subscription,Standard,6021
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Marginal Zone Lymphoma (MZL),Standard Subscription,Standard,10836
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Malignant peripheral nerve sheath tumor (count includes peripheral nerves & autonomic nervous system),Standard Subscription,Standard,1566
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Myeloid Sarcoma,Standard Subscription,Standard,861
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Central nervous system (CNS) cancers,Standard Subscription,Standard,65608
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Testicular Cancer,Standard Subscription,Standard,26545
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Peripheral nerves and autonomic nervous system (count includes Malignant peripheral nerve sheath tumor),Standard Subscription,Standard,1566
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Cutaneous Squamous Cell Carcinoma (cSCC),Standard Subscription,Standard,156158
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Other solid tumor cancers,Standard Subscription,Standard,317863
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),T-cell lymphoma,Standard Subscription,Standard,15486
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Burkitt Lymphoma,Standard Subscription,Standard,3537
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Head and neck cancer (HNSCC),Standard Subscription,Standard,188423
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Kaposi Sarcoma,Standard Subscription,Standard,3220
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Chronic lymphocytic leukemia (CLL),Standard Subscription,Standard,104356
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Bone and Cartilage Cancer,Standard Subscription,Standard,27260
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Peritoneal Cancer,Standard Subscription,Standard,10799
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Essential thrombocythemia (ET),Standard Subscription,Standard,96012
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Systemic Mastocytosis,Standard Subscription,Standard,1860
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Endometrial Cancer,Standard Subscription,Standard,138067
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Ocular cancer,Standard Subscription,Standard,11266
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Carcinoid Syndrome,Standard Subscription,Standard,6700
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Urothelial Cancer,Standard Subscription,Standard,139378
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Lymphoblastic lymphoma (LL),Standard Subscription,Standard,3231
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Brain Cancer,Standard Subscription,Standard,60034
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Colon Cancer,Standard Subscription,Standard,265777
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Hepatocellular Carcinoma (HCC),Standard Subscription,Standard,81605
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Mesothelioma,Standard Subscription,Standard,5843
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Endocrine Cancer,Standard Subscription,Standard,118242
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Esophageal Cancer,Standard Subscription,Standard,55953
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Non-Hodgkin's lymphoma (NHL),Standard Subscription,Standard,237967
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Fallopian Tube Cancer,Standard Subscription,Standard,6264
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Anal Cancer,Standard Subscription,Standard,27045
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Lung Cancers,Standard Subscription,Standard,447880
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Basal Cell Carcinoma (BCC),Standard Subscription,Standard,263212
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Follicular lymphoma (FL),Standard Subscription,Standard,54339
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Monoclonal gammopathy of undetermined significance (MGUS),Standard Subscription,Standard,137299
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Thyroid Cancer,Standard Subscription,Standard,101292
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Myelodysplastic syndrome (MDS),Standard Subscription,Standard,75521
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Chronic Myeloid Leukemia (CML),Standard Subscription,Standard,24229
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Neuroendocrine tumors (NET),Standard Subscription,Standard,57377
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Gastrointestinal Stromal Tumor (GIST),Standard Subscription,Standard,13228
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Solitary Plasmacytoma,Standard Subscription,Standard,5293
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Chronic Myelomonocytic Leukemia (CMML),Standard Subscription,Standard,6682
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Peripheral T cell lymphoma (PTCL),Standard Subscription,Standard,5270
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Mantle Cell Lymphoma (MCL),Standard Subscription,Standard,11538
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Thymus cancer,Standard Subscription,Standard,3937
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Pan-Cancer,Standard Subscription,Standard,4289006
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Colorectal Cancer (CRC),Standard Subscription,Standard,334105
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Waldenstrom macroglobulinemia (WM),Standard Subscription,Standard,11213
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Acute promyelocytic leukemia (APL),Standard Subscription,Standard,3246
+1,BMS,RWD360-Claims,RWD360,Electronic Medical Records (EMR) - Common Data Model (CDM),Core Data Product (Base),Plasma cell leukemia (PCL),Standard Subscription,Standard,1630
